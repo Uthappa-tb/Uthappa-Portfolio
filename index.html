@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Uthappa Bopaiah — Marketing Automation & Digital Project Manager portfolio." />
+  <title>Uthappa Bopaiah | Marketing Automation & Digital Project Manager</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #121a2e;
+      --surface-2: #18223a;
+      --text: #eef3ff;
+      --muted: #aab5cc;
+      --accent: #63a4ff;
+      --accent-2: #8b7cff;
+      --border: rgba(255,255,255,.10);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, rgba(99,164,255,.14), transparent 35%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(92%, var(--max)); margin: auto; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(11,16,32,.78);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo { font-weight: 800; letter-spacing: .5px; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .95rem; }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      padding: 90px 0 70px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .78rem;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5.4rem);
+      line-height: .98;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+    .hero h1 span {
+      background: linear-gradient(100deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero-copy { max-width: 700px; color: var(--muted); font-size: 1.12rem; }
+    .buttons { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(100deg, var(--accent), var(--accent-2));
+      color: #07101f;
+      border: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+
+    .profile-card {
+      background: linear-gradient(145deg, rgba(24,34,58,.95), rgba(18,26,46,.9));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+    }
+    .avatar {
+      width: 82px; height: 82px;
+      display: grid; place-items: center;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07101f;
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .profile-card h3 { margin-bottom: 7px; }
+    .profile-card p { color: var(--muted); font-size: .94rem; }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 25px;
+    }
+    .stat {
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,.025);
+    }
+    .stat strong { display: block; font-size: 1.35rem; }
+    .stat span { color: var(--muted); font-size: .78rem; }
+
+    section { padding: 85px 0; }
+    .section-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -1.5px; margin-bottom: 14px; }
+    .section-intro { color: var(--muted); max-width: 720px; margin-bottom: 38px; }
+
+    .about-grid, .project-grid, .skill-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .about-grid { grid-template-columns: 1fr 1fr; }
+    .project-grid { grid-template-columns: repeat(3, 1fr); }
+    .skill-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: rgba(18,26,46,.78);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .card h3 { margin-bottom: 9px; }
+    .card p { color: var(--muted); font-size: .94rem; }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 17px;
+    }
+    .tag {
+      font-size: .78rem;
+      color: #d8e4ff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(99,164,255,.09);
+      border: 1px solid rgba(99,164,255,.2);
+    }
+
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 30px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline-date { color: var(--accent); font-weight: 700; }
+    .timeline-item p { color: var(--muted); margin-top: 8px; }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 260px;
+    }
+    .project-card .tag-list { margin-top: auto; }
+    .project-number { color: var(--accent); font-weight: 800; margin-bottom: 20px; }
+
+    .contact {
+      text-align: center;
+      padding-bottom: 100px;
+    }
+    .contact-box {
+      background: linear-gradient(145deg, rgba(99,164,255,.12), rgba(139,124,255,.09));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 55px 25px;
+    }
+    .contact-box p { color: var(--muted); max-width: 650px; margin: 0 auto 25px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 850px) {
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr 1fr; }
+      .skill-grid { grid-template-columns: 1fr 1fr; }
+      .hero { padding-top: 60px; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .project-grid, .skill-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 5px; }
+      h1 { letter-spacing: -2px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#home">Uthappa<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Marketing Automation • Digital Projects</div>
+          <h1>Hi, I'm <span>Uthappa.</span></h1>
+          <p class="hero-copy">
+            Marketing Automation and Digital Project Management professional focused on
+            building scalable email journeys, coordinating global campaigns, and turning
+            complex marketing requirements into reliable execution.
+          </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#projects">View My Work</a>
+            <a class="btn" href="#contact">Let's Connect</a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="avatar">UB</div>
+          <h3>Marketing Automation & Digital PM</h3>
+          <p>Campaign delivery • Journey orchestration • Stakeholder management • QA & operations</p>
+          <div class="stats">
+            <div class="stat"><strong>4+</strong><span>Years experience</span></div>
+            <div class="stat"><strong>500+</strong><span>Campaign requests/year</span></div>
+            <div class="stat"><strong>15+</strong><span>Team collaboration</span></div>
+            <div class="stat"><strong>Global</strong><span>Campaign operations</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-label">About me</div>
+        <h2>Bridging marketing, technology and execution.</h2>
+        <p class="section-intro">
+          I work at the intersection of marketing operations and project management.
+          My focus is making campaign delivery predictable — from intake and planning
+          through build, QA, approval, deployment and reporting.
+        </p>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3>What I do</h3>
+            <p>
+              Manage end-to-end marketing automation projects, act as a primary point of
+              contact for stakeholders, coordinate delivery teams, and ensure campaigns
+              move smoothly from requirements to production.
+            </p>
+          </div>
+          <div class="card">
+            <h3>How I work</h3>
+            <p>
+              Structured, detail-oriented and collaborative. I use trackers, workflows,
+              QA checklists and clear approval gates to keep high-volume campaign
+              operations on schedule.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-label">Experience</div>
+        <h2>From campaign request to customer journey.</h2>
+        <p class="section-intro">
+          A typical workflow I manage combines project coordination, marketing automation,
+          quality assurance and stakeholder communication.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">01 — Intake</div>
+            <div>
+              <h3>Requirement & campaign planning</h3>
+              <p>Review campaign requirements, audience, assets, localization needs, timelines and dependencies.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">02 — Build</div>
+            <div>
+              <h3>Marketing automation setup</h3>
+              <p>Coordinate email builds, dynamic content, localization, audience logic and journey configuration.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">03 — QA</div>
+            <div>
+              <h3>Testing & stakeholder approval</h3>
+              <p>Manage QA, validate content and targeting, track changes, resolve issues and obtain final approval.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">04 — Launch</div>
+            <div>
+              <h3>Journey activation & reporting</h3>
+              <p>Coordinate deployment, monitor execution and support post-send reporting and performance analysis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-label">Selected work</div>
+        <h2>Projects & capabilities.</h2>
+        <p class="section-intro">
+          Examples of the type of marketing automation and digital delivery work I handle.
+        </p>
+
+        <div class="project-grid">
+          <article class="card project-card">
+            <div>
+              <div class="project-number">01</div>
+              <h3>Global Email Journeys</h3>
+              <p>Coordinated multi-country customer journeys with localization, audience segmentation, scheduling and deployment controls.</p>
+            </div>
+            <div class="tag-list">
+              <span class="tag">SFMC</span>
+              <span class="tag">Journey Builder</span>
+              <span class="tag">Localization</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div>
+              <div class="project-number">02</div>
+              <h3>Campaign Operations</h3>
+              <p>Managed a high-volume campaign pipeline with structured intake, SLA planning, Jira tracking, build coordination and QA.</p>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Jira</span>
+              <span class="tag">Workfront</span>
+              <span class="tag">QA</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div>
+              <div class="project-number">03</div>
+              <h3>Dynamic Email Personalization</h3>
+              <p>Supported dynamic and localized email experiences using audience attributes, content rules and AMPscript-based logic.</p>
+            </div>
+            <div class="tag-list">
+              <span class="tag">AMPscript</span>
+              <span class="tag">SFMC</span>
+              <span class="tag">Dynamic Content</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-label">Skills & tools</div>
+        <h2>My toolkit.</h2>
+        <div class="skill-grid">
+          <div class="card"><h3>Marketing Automation</h3><div class="tag-list"><span class="tag">Salesforce Marketing Cloud</span><span class="tag">Marketo</span><span class="tag">Journey Builder</span><span class="tag">AMPscript</span></div></div>
+          <div class="card"><h3>Project Management</h3><div class="tag-list"><span class="tag">Jira</span><span class="tag">Adobe Workfront</span><span class="tag">Smartsheet</span><span class="tag">SLA Management</span></div></div>
+          <div class="card"><h3>Campaign Delivery</h3><div class="tag-list"><span class="tag">Email Campaigns</span><span class="tag">Audience Management</span><span class="tag">Localization</span><span class="tag">QA</span></div></div>
+          <div class="card"><h3>Collaboration</h3><div class="tag-list"><span class="tag">Stakeholder Management</span><span class="tag">Global Teams</span><span class="tag">Process Improvement</span><span class="tag">Reporting</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="section-label">Get in touch</div>
+          <h2>Let's build something effective.</h2>
+          <p>
+            I'm interested in Marketing Automation, Digital Project Management and
+            Marketing Operations opportunities.
+          </p>
+          <!-- Replace the links below with your actual profiles before publishing. -->
+          <div class="buttons" style="justify-content:center">
+            <a class="btn btn-primary" href="mailto:your.email@example.com">Email Me</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Uthappa Bopaiah</span>
+      <span>Marketing Automation • Digital Project Management</span>
+    </div>
+  </footer>
+</body>
+</html>
